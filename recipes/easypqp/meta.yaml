@@ -1,5 +1,5 @@
 {% set name = "easypqp" %}
-{% set version = "0.1.26" %} 
+{% set version = "0.1.36" %} 
 
 package:
   name: '{{ name|lower }}'
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 31575e379b1dc3ea31103643d4de3c91b628a683d9bf8a4f0955e32e54579ec8
+  sha256: 7d951622e447d8e0b22bb0204ac0b359391e093d62d4f378fc4a2874a3ae5468
 
 build:
   noarch: python

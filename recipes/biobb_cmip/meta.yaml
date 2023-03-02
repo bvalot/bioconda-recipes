@@ -1,5 +1,5 @@
 {% set name = "biobb_cmip" %}
-{% set version = "3.7.3" %}
+{% set version = "3.9.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: bfed8303a35b6c6235e32d6e149ce5bf3a09b0c53647a05687e7091d91a8ec62
+  sha256: 04b69b50791db4684e4f10151ff63e23c93a83946bb80bf8eac6aacc56083f8a
 
 build:
   number: 0
@@ -16,16 +16,19 @@ build:
 
 requirements:
   host:
-    - python ==3.7.*
+    - python >=3.7
     - setuptools
-    - biobb_common ==3.7.0
+    - biobb_common ==3.9.0
     - cmip ==2.7.0
     - mdanalysis ==2.0.0
+    - biobb_structure_checking ==3.12.1
   run:
-    - python ==3.7.*
-    - biobb_common ==3.7.0
+    - python >=3.7
+    - biobb_common ==3.9.0
     - cmip ==2.7.0
     - mdanalysis ==2.0.0
+    - biobb_structure_checking ==3.12.1
+
 test:
   imports:
     - biobb_cmip

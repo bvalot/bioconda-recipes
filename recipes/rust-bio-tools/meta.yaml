@@ -1,4 +1,4 @@
-{% set version = "0.38.1" %}
+{% set version = "0.42.0" %}
 
 package:
   name: rust-bio-tools
@@ -6,10 +6,11 @@ package:
 
 build:
   number: 0
+  skip: True # [osx]
 
 source:
   url: https://github.com/rust-bio/rust-bio-tools/archive/v{{ version }}.tar.gz
-  sha256: 317ff7c3c8648b48a7dec532b66c844702d0383e6523998f7d9f05912e45275f
+  sha256: 93642d7ebd4b85da8a043fd394a0c2d3ca112d0d8ecc0620cb8400ae703148ca
 
 requirements:
   build:

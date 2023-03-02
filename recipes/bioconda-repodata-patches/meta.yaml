@@ -1,8 +1,6 @@
-{% set version = datetime.datetime.utcnow().strftime('%Y%m%d') %}
-
 package:
   name: bioconda-repodata-patches
-  version: {{ version }}
+  version: 20230228
 
 source:
   path: .
@@ -17,6 +15,8 @@ requirements:
     - setuptools
     - requests
     - tqdm
+  host:
+  run:
 
 test:
   commands:

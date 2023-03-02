@@ -1,17 +1,17 @@
 {% set name = "nextalign" %}
-{% set version = "1.9.0" %}
+{% set version = "2.12.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  - url: https://github.com/nextstrain/nextclade/releases/download/{{ version }}/{{ name }}-Linux-x86_64 # [linux64]
-    sha256: b848bbe84fcdbffc96a9409e6b36eda369caab791908450b608f3d7df4b9cc82                             # [linux64]
-  - url: https://github.com/nextstrain/nextclade/releases/download/{{ version }}/{{ name }}-MacOS-x86_64 # [osx and x86_64]
-    sha256: 3a130d72599fe8834d5d178e97e15dab254c26a5f7693a048006d6ee4fa629e9                             # [osx and x86_64]
-  - url: https://github.com/nextstrain/nextclade/releases/download/{{ version }}/{{ name }}-MacOS-arm64  # [arm64]
-    sha256: d2ce696c642fc2ae621b96156cf5027284660e69ced00677dcfbf3c0a0479427                             # [arm64]
+  - url: https://github.com/nextstrain/nextclade/releases/download/{{ version }}/{{ name }}-x86_64-unknown-linux-gnu  # [linux64]
+    sha256: fcb784232c3f413cb1139bd1199703b27dc87a32841aae23e55525368f1abd20                                           # [linux64]
+  - url: https://github.com/nextstrain/nextclade/releases/download/{{ version }}/{{ name }}-x86_64-apple-darwin        # [osx and x86_64]
+    sha256: 22c4270418b63fd7747460809b645250113d55eeaace502d8992a0e4a7f9ad7e                                           # [osx and x86_64]
+  - url: https://github.com/nextstrain/nextclade/releases/download/{{ version }}/{{ name }}-aarch64-apple-darwin       # [arm64]
+    sha256: 3161a2f93ba7c5d59e0f3e7f5db20fe8b2796b7487e655eae9391ae9e8b903da                                           # [arm64]
 
 build:
   number: 0
@@ -26,12 +26,12 @@ test:
     - nextalign --help
 
 about:
-  home: https://github.com/nextstrain/nextclade/tree/master/packages/nextalign_cli
+  home: https://github.com/nextstrain/nextclade
   license: MIT
   license_family: MIT
-  summary: "Viral genome sequence alignment tool"
-  doc_url: https://docs.nextstrain.org/projects/nextclade/en/stable/user/nextalign-cli.html
-  dev_url: https://github.com/nextstrain/nextclade 
+  summary: "Viral genome alignment"
+  doc_url: https://docs.nextstrain.org/projects/nextclade/en/stable/
+  dev_url: https://github.com/nextstrain/nextclade
 
 extra:
   recipe-maintainers:
@@ -39,6 +39,7 @@ extra:
     - thanhleviet
     - pvanheus
     - corneliusroemer
+    - ivan-aksamentov
   skip-lints:
     # repackaged binary
     - should_be_noarch_generic
